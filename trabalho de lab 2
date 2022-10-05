@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdbool.h>
+#define PEDRA = 1
+#define PAPEL = 2
+#define TESOURA = 3
+int main(){
+    int x,y,z,pedra,papel,tesoura;
+    bool done = false;
+    while(!done)
+    {
+    printf("\n1-Pedra\n2-Papel\n3-Tesoura\n");
+    printf("Escolha uma opção: ");
+    scanf("%d",&x);
+    if(x < 1 || x > 3)
+    do
+    {
+        printf("Opção inválida, digite outro valor: ");
+        scanf("%d",&x);
+    }while(x < 1 || x > 3);
+    switch(x)
+    {
+        case 1:
+        pedra = x;
+        break;
+        case 2:
+        papel = x;
+        break;
+        case 3:
+        tesoura = x;
+        break;
+    }
+    y = rand() % 3+1;
+    printf("\nJogador --> ");
+    printf("%d",x);
+    printf("\n     \nVS.\n");
+    printf("\nComputador --> ");
+    printf("%d\n",y);
+    if(x == y)
+        printf("\nEmpate :/");
+    if(x == 1 && y == 3)
+        printf("\nVoce ganhou! :)");
+    if(x == 1 && y == 2)
+        printf("\nVoce perdeu :(");
+    if(x == 2 && y == 1)
+        printf("\nVoce ganhou! :)");
+    if(x == 2 && y == 3)
+        printf("\nVoce perdeu :(");
+    if(x == 3 && y == 1)
+        printf("\nVoce perdeu :(");
+    if(x == 3 && y == 2)
+        printf("\nVoce ganhou! :)");
+    printf("\n\n\nJogar Novamente?\n1.Sim\n2.Nao\n");
+    scanf("%d",&z);
+        if(y == 1)
+            done = false;
+                else  
+                    done = true;}
+    
+
+}
